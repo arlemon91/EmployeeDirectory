@@ -9,20 +9,21 @@ function SearchForm(props) {
         type="text"
         value={props.search}
         onChange={props.handleInputChange}
-        name="allPeople"
-        type="location"
+        name="person"
+        list="allPeople"
+        className="form-control"
         placeholder="Type in a location"
-        id="location"
+        id="person"
       />
-      <datalist id="location">
-        {props.person.map((location) => (
+      {/* <datalist id="location">
+        {props.location.map((location) => (
           <option value={location} key={location} />
         ))}
-      </datalist>
+      </datalist> */}
       <button
         type="submit"
         onClick={props.handleFormSubmit}
-        className="btn btn-primary"
+        className="btn btn-warning"
       >
         Search
       </button>

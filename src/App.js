@@ -1,16 +1,20 @@
 import React from "react";
-// import Search from "./pages/Search";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import PeopleCard from "./components/PeopleCard";
-import Search from "./components/Search";
+import PeopleCard from "./pages/PeopleCard";
+import SearchPage from "./pages/SearchPage";
 
 const App = () => {
   return (
-    <div>
-      <Navbar></Navbar>
-      <Search></Search>
-      <PeopleCard></PeopleCard>
-    </div>
+    <Router>
+      <div>
+        <Navbar></Navbar>
+        <div>
+          <Route exact path="/" component={PeopleCard} />
+          <Route exact path="/searchpage" component={SearchPage} />
+        </div>
+      </div>
+    </Router>
   );
 };
 
